@@ -1,25 +1,33 @@
 module.exports = {
   root: true,
   env: {
-    node: true,
+    node: true
   },
-  extends: ["plugin:vue/vue3-essential", "eslint:recommended", "@vue/prettier"],
+  extends: ["eslint:recommended", "plugin:vue/vue3-recommended", "@vue/standard", "@vue/prettier"],
   parserOptions: {
-    parser: "babel-eslint",
+    ecmaVersion: 2020,
+    parser: "babel-eslint"
   },
   rules: {
-    "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
-    "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
+    "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
+    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
+    "vue/component-name-in-template-casing": ["error", "PascalCase"],
+    semi: ["error", "never"],
+    "no-unused-vars": ["error", { ignoreRestSiblings: true }],
+    "prettier/prettier": [
+      "warn",
+      {
+        semi: false,
+        printWidth: 100
+      }
+    ]
   },
   overrides: [
     {
-      files: [
-        "**/__tests__/*.{j,t}s?(x)",
-        "**/tests/unit/**/*.spec.{j,t}s?(x)",
-      ],
+      files: ["**/__tests__/*.{j,t}s?(x)", "**/tests/unit/**/*.spec.{j,t}s?(x)"],
       env: {
-        jest: true,
-      },
-    },
-  ],
-};
+        jest: true
+      }
+    }
+  ]
+}
