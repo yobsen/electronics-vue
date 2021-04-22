@@ -3,7 +3,7 @@
   .user-header__container
     a.user-header__logo(href="/")
       img.user-header__logo-icon(src="@/assets/img/logo.png")
-      .user-header__logo-name HYDROPONICS
+      .user-header__logo-name ELECTRONICS
     .user-header__links
       a.user-header__link(href="/products") SHOP
       a.user-header__link SUPPORT
@@ -39,7 +39,8 @@
     font-family: Notable
     font-weight: 700
     font-size: 1.75rem
-    color: #5664b9
+    color: #bc75f9
+    margin-top: -5px
 
   &__links
     font-weight: 700
@@ -51,10 +52,10 @@
 
   &__link
     padding-right: 5em
-    color: #5664b9
+    color: #bc75f9
 
   &__link:hover
-    color: #1a2c54
+    color: #9b42e9
 
   &__user-actions
     display: flex
