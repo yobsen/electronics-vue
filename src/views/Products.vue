@@ -19,11 +19,11 @@ export default {
       products: [
         {
           id: 1,
-          name: "Super Svin",
+          name: "3D-printed box",
           price: "$2.5",
           desc: "Umeet hrukat'"
         },
-        { id: 2, name: "Super Svin 3000", price: "$35.5", desc: "Umeet pukat'" }
+        { id: 2, name: "3D-printed box black", price: "$35.5", desc: "Umeet pukat'" }
       ],
       addedProducts: []
     }

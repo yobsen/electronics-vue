@@ -7,13 +7,15 @@
     .product-info__price {{ product.price }}
     ul.product-info__description
       li {{ product.desc }}
-    .product-info__add-to-cart-button ADD TO CART
+    .product-info__add-to-cart-button(v-if="!isProductAdded" @click="addProduct") ADD TO CART
+    .product-info__add-to-cart-button.product-info__add-to-cart-button--added(v-else @click="removeProduct") ADDED
 </template>
 
 <script>
 export default {
   data() {
     return {
+      isProductAdded: false,
       id: this.$route.params.id,
       product: {
         id: 1,
@@ -22,7 +24,16 @@ export default {
         desc: "Umeet hrukat'"
       }
     }
+  },
+  methods: {
+    addProduct() {
+      this.isProductAdded = true
+    },
+    removeProduct() {
+      this.isProductAdded = false
+    }
   }
+
   // async created() {
   //   await this.$store.dispatch("product/getProduct", this.id)
   //   this.product = this.$store.getters["product/product"]
@@ -79,8 +90,17 @@ export default {
     text-align: center
     cursor: pointer
 
-  &-info__add-to-cart-button:hover
-    color: white
-    background-color: #5664b9
-    cursor: pointer
+    &:hover
+      color: white
+      background-color: #5664b9
+      cursor: pointer
+
+    &--added
+      background-color: #5664b9
+      color: white
+
+      &:hover
+        color: white
+        background-color: #5664b9
+        cursor: pointer
 </style>
