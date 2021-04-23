@@ -8,7 +8,8 @@
       img(:src="productImage")
     .product-item__title {{ product.name }}
     .product-item__price {{ product.price }}
-    a.product-item__add-to-cart-button ADD TO CART
+  .product-item__add-to-cart-button(v-if="!isProductAdded" @click="addProduct") ADD TO CART
+  .product-item__add-to-cart-button.product-item__add-to-cart-button--added(v-else @click="removeProduct") ADDED
 </template>
 
 <script>
@@ -16,6 +17,25 @@ export default {
   props: {
     productImage: { type: String, default: "" },
     product: { type: Object, default: () => {} }
+  },
+  emits: {
+    addProduct: null,
+    removeProduct: null
+  },
+  data() {
+    return {
+      isProductAdded: false
+    }
+  },
+  methods: {
+    addProduct() {
+      this.$emit("addProduct", this.product)
+      this.isProductAdded = true
+    },
+    removeProduct() {
+      this.$emit("removeProduct", this.product)
+      this.isProductAdded = false
+    }
   }
 }
 </script>
@@ -59,8 +79,17 @@ export default {
     display: block
     text-align: center
 
-  &__add-to-cart-button:hover
-    color: white
-    background-color: #5664b9
-    cursor: pointer
+    &:hover
+      color: white
+      background-color: #5664b9
+      cursor: pointer
+
+    &--added
+      background-color: #5664b9
+      color: white
+
+      &:hover
+        color: white
+        background-color: #5664b9
+        cursor: pointer
 </style>

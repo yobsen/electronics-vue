@@ -33,6 +33,10 @@ a
 input
   outline: 0
 
+  &::placeholder
+    color: #5664b9
+    font-family: IBMPlexMono
+
 #app
   min-height: 100vh
 </style>

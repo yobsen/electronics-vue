@@ -4,6 +4,8 @@
     ProductCard(
       :productImage=`require("@/assets/img/sample-image-5.jpg")`
       :product="product"
+      @addProduct="addProduct"
+      @removeProduct="removeProduct"
     )
 </template>
 
@@ -22,7 +24,16 @@ export default {
           desc: "Umeet hrukat'"
         },
         { id: 2, name: "Super Svin 3000", price: "$35.5", desc: "Umeet pukat'" }
-      ]
+      ],
+      addedProducts: []
+    }
+  },
+  methods: {
+    addProduct(product) {
+      this.addedProducts.push(product)
+    },
+    removeProduct(product) {
+      this.addedProducts = this.addedProducts.filter(addedProduct => addedProduct.id === product.id)
     }
   }
   // async created() {

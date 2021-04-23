@@ -10,8 +10,9 @@
       a.user-header__link CONTACT
     .user-header__user-actions
       router-link(to="/sign-up")
-        img.user-header__user-icon(src="@/assets/img/user-icon.svg" tag="img")
-      img.user-header__cart-icon(src="@/assets/img/shopping-cart.svg")
+        img.user-header__user-icon(src="@/assets/img/user-icon.svg")
+      router-link(to="/cart")  
+        img.user-header__cart-icon(src="@/assets/img/shopping-cart.svg")
 </template>
 
 <style lang="sass">

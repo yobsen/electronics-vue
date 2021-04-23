@@ -9,6 +9,7 @@ const routes = [
   {
     path: "/products",
     name: "Products",
+    props: true,
     component: () => import("../views/Products.vue")
   },
   {
@@ -20,6 +21,11 @@ const routes = [
     path: "/sign-up",
     name: "SignUp",
     component: () => import("../views/SignUp")
+  },
+  {
+    path: "/cart",
+    name: "Cart",
+    component: () => import("../views/Cart")
   }
   // {
   //   path: "/admin/products",
