@@ -18,10 +18,10 @@ export default {
         {
           id: 1,
           name: "Super Svin",
-          centi_price: "$2.5",
+          price: "$2.5",
           desc: "Umeet hrukat'"
         },
-        { id: 2, name: "Super Svin 3000", centi_price: "$2.5", desc: "Umeet pukat'" }
+        { id: 2, name: "Super Svin 3000", price: "$35.5", desc: "Umeet pukat'" }
       ]
     }
   }

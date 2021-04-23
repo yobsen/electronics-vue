@@ -11,6 +11,7 @@ export default {}
 <style lang="sass">
 .home
   min-height: 70vh
+  background-image: require("@/src/assets/img/soldering-iron.jpg")
 
   &__text
     margin-top: 200px

@@ -5,7 +5,7 @@
   .product-form__input
     input(v-model="product.desc" placeholder="Description")
   .product-form__input
-    input(v-model="product.centi_price" placeholder="Price")
+    input(v-model="product.price" placeholder="Price")
   .product-form__save-button-container
     .product-form__save-button(@click="createProduct") Save
 </template>
@@ -17,7 +17,7 @@ export default {
       product: {
         name: "",
         desc: "",
-        centi_price: "",
+        price: "",
         is_active: false,
         image_url: ""
       }

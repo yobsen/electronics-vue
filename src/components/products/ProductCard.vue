@@ -7,7 +7,7 @@
     .product-item__image
       img(:src="productImage")
     .product-item__title {{ product.name }}
-    .product-item__price ${{ product.centi_price / 100 }}
+    .product-item__price {{ product.price }}
     a.product-item__add-to-cart-button ADD TO CART
 </template>
 

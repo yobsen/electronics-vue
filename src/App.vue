@@ -6,7 +6,6 @@ component(:is="layout" id="app")
 <script>
 import User from "./layouts/User.vue"
 // import Admin from "./layouts/Admin.vue"
-
 export default {
   name: "App",
   components: { User },
@@ -30,6 +29,9 @@ a
   text-decoration: none
   outline: 0
   color: inherit
+
+input
+  outline: 0
 
 #app
   min-height: 100vh

@@ -1,15 +1,16 @@
 <template lang="pug">
 .user-header
   .user-header__container
-    a.user-header__logo(href="/")
+    router-link.user-header__logo(to="/")
       img.user-header__logo-icon(src="@/assets/img/logo.png")
       .user-header__logo-name ELECTRONICS
     .user-header__links
-      a.user-header__link(href="/products") SHOP
+      router-link.user-header__link(to="/products") SHOP
       a.user-header__link SUPPORT
       a.user-header__link CONTACT
     .user-header__user-actions
-      img.user-header__user-icon(src="@/assets/img/user-icon.svg")
+      router-link(to="/sign-up")
+        img.user-header__user-icon(src="@/assets/img/user-icon.svg" tag="img")
       img.user-header__cart-icon(src="@/assets/img/shopping-cart.svg")
 </template>
 

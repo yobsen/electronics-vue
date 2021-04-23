@@ -4,7 +4,7 @@
     img(src="@/assets/img/sample-image-5.jpg")
   .product-info
     .product-info__title {{ product.name }}
-    .product-info__price ${{ product.centi_price }}
+    .product-info__price {{ product.price }}
     ul.product-info__description
       li {{ product.desc }}
     .product-info__add-to-cart-button ADD TO CART
@@ -18,7 +18,7 @@ export default {
       product: {
         id: 1,
         name: "Super Svin",
-        centi_price: "$2.5",
+        price: "$2.5",
         desc: "Umeet hrukat'"
       }
     }
